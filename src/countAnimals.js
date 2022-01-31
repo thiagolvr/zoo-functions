@@ -2,7 +2,7 @@ const data = require('../data/zoo_data');
 
 const { species } = data;
 
-function countAnimals(animal) {
+const countAnimals = (animal) => {
   if (!animal) {
     const valuesOfAnimals = {};
     species.forEach(({ name, residents }) => { valuesOfAnimals[name] = residents.length; });
@@ -15,7 +15,7 @@ function countAnimals(animal) {
   if (animal) {
     return species.find(({ name }) => name === animal.specie).residents.length;
   }
-}
+};
 
 module.exports = countAnimals;
 
